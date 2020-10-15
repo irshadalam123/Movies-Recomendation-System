@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/ui-darkness/jquery-ui.min.css" rel="stylesheet">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+
+
+  <title>movies galary</title>
+
+
+  <style>
+    .ui-autocomplete {
+      max-height: 500px;
+      overflow-y: auto;
+      max-width: 450px;
+    }
+  </style>
+
+
+  <script type="text/javascript">
+
+    $(function(){
+
+      $.ajax({
+        url : '{{ url_for("autocomplete") }}'
+      }).done(function(data){
+        $('#autocomplete').autocomplete({
+          source: data,
+          minLength: 1
+        });
+
+        $.ui.autocomplete.prototype._renderItem = function (ul, item) {        
+          var t = String(item.value).replace(
+                  new RegExp(this.term, "gi"),
+                  "<span class='ui-state-highlight'>$&</span>");
+          return $("<li></li>")
+              .data("item.autocomplete", item)
+              .append("<a>" + t + "</a>")
+              .appendTo(ul);
+        };
+        
+      });
+
+    });
+
+  </script>
+
+
+</head>
+<body style="background-color: rgba(70, 5, 43, 0.979);">
+  <div class="container">
+    <nav class="navbar d-flex justify-content-center">
+      <a href="/" class="navbar-brand text-white"><h3>Home</h3></a>
+      <form class="form-inline" method="POST" action="/search">
+        <input class="form-control" type="search" name="autocomplete" id="autocomplete" autocomplete="off" placeholder="Search" aria-label="Search" style="width: 450px; margin-right: 20px;" required>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </nav>
+  </div>
+
+  <div class="container">
+    <br/>
+      <br/>
+    <div class="d-flex justify-content-center">
+      <h2 class="text-white">Movies Gallery</h2>
+      
+    </div>
+    <br/>
+      <br/>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n1}}">
+            <img src={{i1}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n1}} {{y1}}</b></p>
+          </a>
+          <p class="text-white">{{d1}} | {{g1}}</p>
+          <p class="text-white">Rating {{r1}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n2}}">
+            <img src={{i2}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n2}} {{y2}}</b></p>
+          </a>
+          <p class="text-white">{{d2}} | {{g2}}</p>
+          <p class="text-white">Rating {{r2}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n3}}">
+            <img src={{i3}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n3}} {{y3}}</b></p>
+          </a>
+          <p class="text-white">{{d3}} | {{g3}}</p>
+          <p class="text-white">Rating {{r3}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n4}}">
+            <img src={{i4}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n4}} {{y4}}</b></p>
+          </a>
+          <p class="text-white">{{d4}} | {{g4}}</p>
+          <p class="text-white">Rating {{r4}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n5}}">
+            <img src={{i5}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n5}} {{y5}}</b></p>
+          </a>
+          <p class="text-white">{{d5}} | {{g5}}</p>
+          <p class="text-white">Rating {{r5}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n6}}">
+            <img src={{i6}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n6}} {{y6}}</b></p>
+          </a>
+          <p class="text-white">{{d6}} | {{g6}}</p>
+          <p class="text-white">Rating {{r6}}</p>
+          
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+    <br/>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n7}}">
+            <img src={{i7}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n7}} {{y7}}</b></p>
+          </a>
+          <p class="text-white">{{d7}} | {{g7}}</p>
+          <p class="text-white">Rating {{r7}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n8}}">
+            <img src={{i8}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n8}} {{y8}}</b></p>
+          </a>
+          <p class="text-white">{{d18}} | {{g8}}</p>
+          <p class="text-white">Rating {{r8}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n9}}">
+            <img src={{i9}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n9}} {{y9}}</b></p>
+          </a>
+          <p class="text-white">{{d9}} | {{g9}}</p>
+          <p class="text-white">Rating {{r9}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n10}}">
+            <img src={{i10}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n10}} {{y10}}</b></p>
+          </a>
+          <p class="text-white">{{d10}} | {{g10}}</p>
+          <p class="text-white">Rating {{r10}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n11}}">
+            <img src={{i11}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n11}} {{y11}}</b></p>
+          </a>
+          <p class="text-white">{{d11}} | {{g11}}</p>
+          <p class="text-white">Rating {{r11}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n12}}">
+            <img src={{i12}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n12}} {{y12}}</b></p>
+          </a>
+          <p class="text-white">{{d12}} | {{g12}}</p>
+          <p class="text-white">Rating {{r12}}</p>
+          
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+    <br/>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n13}}">
+            <img src={{i13}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n13}} {{y13}}</b></p>
+          </a>
+          <p class="text-white">{{d13}} | {{g13}}</p>
+          <p class="text-white">Rating {{r13}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n14}}">
+            <img src={{i14}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n14}} {{y14}}</b></p>
+          </a>
+          <p class="text-white">{{d14}} | {{g14}}</p>
+          <p class="text-white">Rating {{r14}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n15}}">
+            <img src={{i15}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n15}} {{y15}}</b></p>
+          </a>
+          <p class="text-white">{{d15}} | {{g15}}</p>
+          <p class="text-white">Rating {{r15}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n16}}">
+            <img src={{i16}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n16}} {{y16}}</b></p>
+          </a>
+          <p class="text-white">{{d16}} | {{g16}}</p>
+          <p class="text-white">Rating {{r16}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n17}}">
+            <img src={{i17}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n17}} {{y17}}</b></p>
+          </a>
+          <p class="text-white">{{d17}} | {{g17}}</p>
+          <p class="text-white">Rating {{r17}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n18}}">
+            <img src={{i18}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n18}} {{y18}}</b></p>
+          </a>
+          <p class="text-white">{{d18}} | {{g18}}</p>
+          <p class="text-white">Rating {{r18}}</p>
+          
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+    <br/>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n19}}">
+            <img src={{i19}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n19}} {{y19}}</b></p>
+          </a>
+          <p class="text-white">{{d19}} | {{g19}}</p>
+          <p class="text-white">Rating {{r19}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n20}}">
+            <img src={{i20}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n20}} {{y20}}</b></p>
+          </a>
+          <p class="text-white">{{d20}} | {{g20}}</p>
+          <p class="text-white">Rating {{r20}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n21}}">
+            <img src={{i21}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n21}} {{y21}}</b></p>
+          </a>
+          <p class="text-white">{{d21}} | {{g21}}</p>
+          <p class="text-white">Rating {{r21}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n22}}">
+            <img src={{i22}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n22}} {{y22}}</b></p>
+          </a>
+          <p class="text-white">{{d22}} | {{g22}}</p>
+          <p class="text-white">Rating {{r22}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n23}}">
+            <img src={{i23}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n23}} {{y23}}</b></p>
+          </a>
+          <p class="text-white">{{d23}} | {{g23}}</p>
+          <p class="text-white">Rating {{r23}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n24}}">
+            <img src={{i24}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n24}} {{y24}}</b></p>
+          </a>
+          <p class="text-white">{{d24}} | {{g24}}</p>
+          <p class="text-white">Rating {{r24}}</p>
+          
+        </div>
+      </div>
+    </div>
+  
+    <hr/>
+    <br/>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n25}}">
+            <img src={{i25}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n25}} {{y25}}</b></p>
+          </a>
+          <p class="text-white">{{d25}} | {{g25}}</p>
+          <p class="text-white">Rating {{r25}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n26}}">
+            <img src={{i26}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n26}} {{y26}}</b></p>
+          </a>
+          <p class="text-white">{{d26}} | {{g26}}</p>
+          <p class="text-white">Rating {{r26}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n27}}">
+            <img src={{i27}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n27}} {{y27}}</b></p>
+          </a>
+          <p class="text-white">{{d27}} | {{g27}}</p>
+          <p class="text-white">Rating {{r27}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n28}}">
+            <img src={{i28}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n28}} {{y28}}</b></p>
+          </a>
+          <p class="text-white">{{d28}} | {{g28}}</p>
+          <p class="text-white">Rating {{r28}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n29}}">
+            <img src={{i29}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n29}} {{y29}}</b></p>
+          </a>
+          <p class="text-white">{{d29}} | {{g29}}</p>
+          <p class="text-white">Rating {{r29}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n30}}">
+            <img src={{i30}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n30}} {{y30}}</b></p>
+          </a>
+          <p class="text-white">{{d30}} | {{g30}}</p>
+          <p class="text-white">Rating {{r30}}</p>
+          
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+    <br/>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n31}}">
+            <img src={{i31}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n31}} {{y31}}</b></p>
+          </a>
+          <p class="text-white">{{d31}} | {{g31}}</p>
+          <p class="text-white">Rating {{r31}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n32}}">
+            <img src={{i32}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n32}} {{y32}}</b></p>
+          </a>
+          <p class="text-white">{{d32}} | {{g32}}</p>
+          <p class="text-white">Rating {{r32}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n33}}">
+            <img src={{i33}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n33}} {{y33}}</b></p>
+          </a>
+          <p class="text-white">{{d33}} | {{g33}}</p>
+          <p class="text-white">Rating {{r33}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n34}}">
+            <img src={{i34}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n34}} {{y34}}</b></p>
+          </a>
+          <p class="text-white">{{d34}} | {{g34}}</p>
+          <p class="text-white">Rating {{r34}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n35}}">
+            <img src={{i35}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n35}} {{y35}}</b></p>
+          </a>
+          <p class="text-white">{{d35}} | {{g35}}</p>
+          <p class="text-white">Rating {{r35}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n36}}">
+            <img src={{i36}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n36}} {{y36}}</b></p>
+          </a>
+          <p class="text-white">{{d36}} | {{g36}}</p>
+          <p class="text-white">Rating {{r36}}</p>
+          
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+    <br/>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n37}}">
+            <img src={{i37}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n37}} {{y37}}</b></p>
+          </a>
+          <p class="text-white">{{d37}} | {{g37}}</p>
+          <p class="text-white">Rating {{r37}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n38}}">
+            <img src={{i38}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n38}} {{y38}}</b></p>
+          </a>
+          <p class="text-white">{{d38}} | {{g38}}</p>
+          <p class="text-white">Rating {{r38}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n39}}">
+            <img src={{i39}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n39}} {{y39}}</b></p>
+          </a>
+          <p class="text-white">{{d39}} | {{g39}}</p>
+          <p class="text-white">Rating {{r39}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n40}}">
+            <img src={{i40}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n40}} {{y40}}</b></p>
+          </a>
+          <p class="text-white">{{d40}} | {{g40}}</p>
+          <p class="text-white">Rating {{r40}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n41}}">
+            <img src={{i41}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n41}} {{y41}}</b></p>
+          </a>
+          <p class="text-white">{{d41}} | {{g41}}</p>
+          <p class="text-white">Rating {{r41}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n42}}">
+            <img src={{i42}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n42}} {{y42}}</b></p>
+          </a>
+          <p class="text-white">{{d42}} | {{g42}}</p>
+          <p class="text-white">Rating {{r42}}</p>
+          
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+    <br/>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n43}}">
+            <img src={{i43}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n43}} {{y43}}</b></p>
+          </a>
+          <p class="text-white">{{d43}} | {{g43}}</p>
+          <p class="text-white">Rating {{r43}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n44}}">
+            <img src={{i44}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n44}} {{y44}}</b></p>
+          </a>
+          <p class="text-white">{{d44}} | {{g44}}</p>
+          <p class="text-white">Rating {{r44}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n45}}">
+            <img src={{i45}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n45}} {{y45}}</b></p>
+          </a>
+          <p class="text-white">{{d45}} | {{g45}}</p>
+          <p class="text-white">Rating {{r45}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n46}}">
+            <img src={{i46}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n46}} {{y46}}</b></p>
+          </a>
+          <p class="text-white">{{d46}} | {{g46}}</p>
+          <p class="text-white">Rating {{r46}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n47}}">
+            <img src={{i47}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n47}} {{y47}}</b></p>
+          </a>
+          <p class="text-white">{{d47}} | {{g47}}</p>
+          <p class="text-white">Rating {{r47}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n48}}">
+            <img src={{i48}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n48}} {{y48}}</b></p>
+          </a>
+          <p class="text-white">{{d48}} | {{g48}}</p>
+          <p class="text-white">Rating {{r48}}</p>
+          
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+    <br/>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n49}}">
+            <img src={{i49}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n49}} {{y49}}</b></p>
+          </a>
+          <p class="text-white">{{d49}} | {{g49}}</p>
+          <p class="text-white">Rating {{r49}}</p>
+          
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="thumbnail justify-content-center">
+          <a href="/search?m_name={{n50}}">
+            <img src={{i50}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
+            <p class="text-white"><b>{{n50}} {{y50}}</b></p>
+          </a>
+          <p class="text-white">{{d50}} | {{g50}}</p>
+          <p class="text-white">Rating {{r50}}</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </body>
+  </html>
