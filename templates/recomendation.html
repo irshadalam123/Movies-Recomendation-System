@@ -62,6 +62,8 @@
 </head>
 <body style="background-color: rgba(70, 5, 43, 0.979);">
 
+    <br/>
+
     <div class="container">
         <nav class="navbar d-flex justify-content-center">
           <form class="form-inline" method="POST" action="/search">
@@ -75,12 +77,12 @@
     <br/>
 
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <div class="thumbnail justify-content-center">
+                <div class="card">
                     <a target="_blank">
-                      <img src={{img}} alt="item" class="rounded justify-content-center" alt="Lights" style="width: 300px;height: 400px;">
+                      <img src={{img}} alt="item" class="card-img-top rounded" alt="Lights">
                     </a>
                     
                   </div>
@@ -106,44 +108,44 @@
 
         <div class="row">
           <div class="col-md-2">
-            <div class="thumbnail justify-content-center">
+            <div class="card">
               <a target="_blank">
-                <img src={{ss1}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:130px; height: 130px;">
+                <img src={{ss1}} alt="item" class="rounded card-img-top" alt="Lights">
               </a>
             </div>
           </div>
           <div class="col-md-2">
-            <div class="thumbnail justify-content-center">
+            <div class="card">
               <a target="_blank">
-                <img src={{ss2}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:130px; height: 130px;">
+                <img src={{ss2}} alt="item" class="rounded card-img-top" alt="Lights">
               </a>
             </div>
           </div>
           <div class="col-md-2">
-            <div class="thumbnail justify-content-center">
+            <div class="card">
               <a target="_blank">
-                <img src={{ss3}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:130px; height: 130px;">
+                <img src={{ss3}} alt="item" class="rounded card-img-top" alt="Lights">
               </a>
             </div>
           </div>
           <div class="col-md-2">
-            <div class="thumbnail justify-content-center">
+            <div class="card">
               <a target="_blank">
-                <img src={{ss4}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:130px; height: 130px;">
+                <img src={{ss4}} alt="item" class="rounded card-img-top" alt="Lights">
               </a>
             </div>
           </div>
           <div class="col-md-2">
-            <div class="thumbnail justify-content-center">
+            <div class="card">
               <a target="_blank">
-                <img src={{ss5}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:130px; height: 130px;">
+                <img src={{ss5}} alt="item" class="rounded card-img-top" alt="Lights">
               </a>
             </div>
           </div>
           <div class="col-md-2">
-            <div class="thumbnail justify-content-center">
+            <div class="card">
               <a target="_blank">
-                <img src={{ss6}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:130px; height: 130px;">
+                <img src={{ss6}} alt="item" class="rounded card-img-top" alt="Lights">
               </a>
             </div>
           </div>
@@ -257,78 +259,76 @@
         <br/>
         <br/>
 
-        <div class="row">
-            <h2 class="text-white">Recomended Movies</h2>
-        </div>
-
+        <h2 class="text-white">Recomended Movies</h2>
+        
         <br/>
         <br/>
 
         <div class="row">
             <div class="col-md-2">
-              <div class="thumbnail justify-content-center">
+              <div class="card bg-transparent text-white">
                 <a href="/search?m_name={{n1}}">
-                  <img src={{i1}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
-                <p class="text-white"><b>{{n1}} {{y1}}</b></p>
-                </a>
-                <p class="text-white">{{d1}} | {{g1}}</p>
-                <p class="text-white">Rating {{r1}}</p>
-                
+                  <img src={{i1}} alt="item" class="rounded card-img-top" alt="Lights"></a>
+                <div class="card-body">
+                  <a href="/search?m_name={{n1}}"><p class="text-white"><b>{{n1}} {{y1}}</b></p></a>
+                  <p class="text-white">{{d1}} | {{g1}}</p>
+                  <p class="text-white">Rating {{r1}}</p>
+                </div>
               </div>
             </div>
             <div class="col-md-2">
-              <div class="thumbnail justify-content-center">
+              <div class="card bg-transparent text-white">
                 <a href="/search?m_name={{n2}}">
-                  <img src={{i2}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
-                  <p class="text-white"><b>{{n2}} {{y2}}</b></p>
-                </a>
-                <p class="text-white">{{d2}} | {{g2}}</p>
-                <p class="text-white">Rating {{r2}}</p>
-                
+                  <img src={{i2}} alt="item" class="rounded card-img-top" alt="Lights"></a>
+                <div class="card-body">
+                  <a href="/search?m_name={{n2}}"><p class="text-white"><b>{{n2}} {{y2}}</b></p></a>
+                  <p class="text-white">{{d2}} | {{g2}}</p>
+                  <p class="text-white">Rating {{r2}}</p>
+                </div>
               </div>
             </div>
             <div class="col-md-2">
-              <div class="thumbnail justify-content-center">
+              <div class="card bg-transparent text-white">
                 <a href="/search?m_name={{n3}}">
-                  <img src={{i3}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
-                  <p class="text-white"><b>{{n3}} {{y3}}</b></p>
-                </a>
-                <p class="text-white">{{d3}} | {{g3}}</p>
-                <p class="text-white">Rating {{r3}}</p>
-                
+                  <img src={{i3}} alt="item" class="rounded card-img-top" alt="Lights"></a>
+                <div class="card-body">
+                  <a href="/search?m_name={{n3}}"><p class="text-white"><b>{{n3}} {{y3}}</b></p></a>
+                  <p class="text-white">{{d3}} | {{g3}}</p>
+                  <p class="text-white">Rating {{r3}}</p>
+                </div>
               </div>
             </div>
             <div class="col-md-2">
-              <div class="thumbnail justify-content-center">
+              <div class="card bg-transparent text-white">
                 <a href="/search?m_name={{n4}}">
-                  <img src={{i4}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
-                  <p class="text-white"><b>{{n4}} {{y4}}</b></p>
-                </a>
-                <p class="text-white">{{d4}} | {{g4}}</p>
-                <p class="text-white">Rating {{r4}}</p>
-                
+                  <img src={{i4}} alt="item" class="rounded card-img-top" alt="Lights"></a>
+                <div class="card-body">
+                  <a href="/search?m_name={{n4}}"><p class="text-white"><b>{{n4}} {{y4}}</b></p></a>
+                  <p class="text-white">{{d4}} | {{g4}}</p>
+                  <p class="text-white">Rating {{r4}}</p>
+                </div>
               </div>
             </div>
             <div class="col-md-2">
-              <div class="thumbnail justify-content-center">
+              <div class="card bg-transparent text-white">
                 <a href="/search?m_name={{n5}}">
-                  <img src={{i5}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
-                  <p class="text-white"><b>{{n5}} {{y5}}</b></p>
-                </a>
-                <p class="text-white">{{d5}} | {{g5}}</p>
-                <p class="text-white">Rating {{r5}}</p>
-                
+                  <img src={{i5}} alt="item" class="rounded card-img-top" alt="Lights"></a>
+                <div class="card-body">
+                  <a href="/search?m_name={{n5}}"><p class="text-white"><b>{{n5}} {{y5}}</b></p></a>
+                  <p class="text-white">{{d5}} | {{g5}}</p>
+                  <p class="text-white">Rating {{r5}}</p>
+                </div>
               </div>
             </div>
             <div class="col-md-2">
-              <div class="thumbnail justify-content-center">
+              <div class="card bg-transparent text-white">
                 <a href="/search?m_name={{n6}}">
-                  <img src={{i6}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
-                  <p class="text-white"><b>{{n6}} {{y6}}</b></p>
-                </a>
-                <p class="text-white">{{d6}} | {{g6}}</p>
-                <p class="text-white">Rating {{r6}}</p>
-                
+                  <img src={{i6}} alt="item" class="rounded card-img-top" alt="Lights"></a>
+                <div class="card-body">
+                  <a href="/search?m_name={{n6}}"><p class="text-white"><b>{{n6}} {{y6}}</b></p></a>
+                  <p class="text-white">{{d6}} | {{g6}}</p>
+                  <p class="text-white">Rating {{r6}}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -338,69 +338,69 @@
       
           <div class="row">
             <div class="col-md-2">
-              <div class="thumbnail justify-content-center">
+              <div class="card bg-transparent text-white">
                 <a href="/search?m_name={{n7}}">
-                  <img src={{i7}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
-                  <p class="text-white"><b>{{n7}} {{y7}}</b></p>
-                </a>
-                <p class="text-white">{{d7}} | {{g7}}</p>
-                <p class="text-white">Rating {{r7}}</p>
-                
+                  <img src={{i7}} alt="item" class="rounded card-img-top" alt="Lights"></a>
+                <div class="card-body">
+                  <a href="/search?m_name={{n7}}"><p class="text-white"><b>{{n7}} {{y7}}</b></p></a>
+                  <p class="text-white">{{d7}} | {{g7}}</p>
+                  <p class="text-white">Rating {{r7}}</p>
+                </div>
               </div>
             </div>
             <div class="col-md-2">
-              <div class="thumbnail justify-content-center">
+              <div class="card bg-transparent text-white">
                 <a href="/search?m_name={{n8}}">
-                  <img src={{i8}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
-                  <p class="text-white"><b>{{n8}} {{y8}}</b></p>
-                </a>
-                <p class="text-white">{{d8}} | {{g8}}</p>
-                <p class="text-white">Rating {{r8}}</p>
-                
+                  <img src={{i8}} alt="item" class="rounded card-img-top" alt="Lights"></a>
+                <div class="card-body">
+                  <a href="/search?m_name={{n8}}"><p class="text-white"><b>{{n8}} {{y8}}</b></p></a>
+                  <p class="text-white">{{d8}} | {{g8}}</p>
+                  <p class="text-white">Rating {{r8}}</p>
+              </div>
               </div>
             </div>
             <div class="col-md-2">
-              <div class="thumbnail justify-content-center">
+              <div class="card bg-transparent text-white">
                 <a href="/search?m_name={{n9}}">
-                  <img src={{i9}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
-                  <p class="text-white"><b>{{n9}} {{y9}}</b></p>
-                </a>
-                <p class="text-white">{{d9}} | {{g9}}</p>
-                <p class="text-white">Rating {{r9}}</p>
-                
+                  <img src={{i9}} alt="item" class="rounded card-img-top" alt="Lights"></a>
+                <div class="card-body">
+                  <a href="/search?m_name={{n9}}"><p class="text-white"><b>{{n9}} {{y9}}</b></p></a>               
+                  <p class="text-white">{{d9}} | {{g9}}</p>
+                  <p class="text-white">Rating {{r9}}</p>
+                </div>
               </div>
             </div>
             <div class="col-md-2">
-              <div class="thumbnail justify-content-center">
+              <div class="card bg-transparent text-white">
                 <a href="/search?m_name={{n10}}">
-                  <img src={{i10}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
-                  <p class="text-white"><b>{{n10}} {{y10}}</b></p>
-                </a>
-                <p class="text-white">{{d10}} | {{g10}}</p>
-                <p class="text-white">Rating {{r10}}</p>
-                
+                  <img src={{i10}} alt="item" class="rounded card-img-top" alt="Lights"></a>
+                <div class="card-body">
+                  <a href="/search?m_name={{n10}}"><p class="text-white"><b>{{n10}} {{y10}}</b></p></a>
+                  <p class="text-white">{{d10}} | {{g10}}</p>
+                  <p class="text-white">Rating {{r10}}</p>
+                </div>
               </div>
             </div>
             <div class="col-md-2">
-              <div class="thumbnail justify-content-center">
+              <div class="card bg-transparent text-white">
                 <a href="/search?m_name={{n11}}">
-                  <img src={{i11}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
-                  <p class="text-white"><b>{{n11}} {{y11}}</b></p>
-                </a>
-                <p class="text-white">{{d11}} | {{g11}}</p>
-                <p class="text-white">Rating {{r11}}</p>
-                
+                  <img src={{i11}} alt="item" class="rounded card-img-top" alt="Lights"></a>
+                <div class="card-body">
+                  <a href="/search?m_name={{n10}}"><p class="text-white"><b>{{n11}} {{y11}}</b></p></a>
+                  <p class="text-white">{{d11}} | {{g11}}</p>
+                  <p class="text-white">Rating {{r11}}</p>
+                </div>
               </div>
             </div>
             <div class="col-md-2">
-              <div class="thumbnail justify-content-center">
+              <div class="card bg-transparent text-white">
                 <a href="/search?m_name={{n12}}">
-                  <img src={{i12}} alt="item" class="rounded justify-content-center" alt="Lights" style="width:160px; height: 230px;">
-                  <p class="text-white"><b>{{n12}} {{y12}}</b></p>
-                </a>
-                <p class="text-white">{{d12}} | {{g12}}</p>
-                <p class="text-white">Rating {{r12}}</p>
-                
+                  <img src={{i12}} alt="item" class="rounded card-img-top" alt="Lights"></a>
+                <div class="card-body">
+                  <a href="/search?m_name={{n12}}"><p class="text-white"><b>{{n12}} {{y12}}</b></p></a>
+                  <p class="text-white">{{d12}} | {{g12}}</p>
+                  <p class="text-white">Rating {{r12}}</p>
+                </div>
               </div>
             </div>
           </div>
