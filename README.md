@@ -7,13 +7,13 @@ You can check out the demo: https://movie-recommender-system00.herokuapp.com/
 
 # Screenshots of project
 
-<img src='https://user-images.githubusercontent.com/48127972/96168839-f9e73400-0f3e-11eb-90b6-f4c36b0e503c.png' width='700px' height='400px'>
+<img src='https://user-images.githubusercontent.com/48127972/96625938-75285b80-132c-11eb-95b0-9195073c1d8d.png' width='700px' height='400px'>
 
-<img src='https://user-images.githubusercontent.com/48127972/96168899-0c616d80-0f3f-11eb-91cf-42f6949f51cd.png' width='700px' height='400px'>
+<img src='https://user-images.githubusercontent.com/48127972/96625943-78234c00-132c-11eb-8f8c-2e27760facf7.png' width='700px' height='400px'>
 
-<img src='https://user-images.githubusercontent.com/48127972/96169238-767a1280-0f3f-11eb-8e7c-ed7b75d4e97b.png' width='700px' height='400px'>
+<img src='https://user-images.githubusercontent.com/48127972/96625953-7a85a600-132c-11eb-96e5-5bb52fbdc48d.png' width='700px' height='400px'>
 
-<img src='https://user-images.githubusercontent.com/48127972/96169249-7b3ec680-0f3f-11eb-84c0-1d0618c67b8f.png' width='700px' height='400px'>
+<img src='https://user-images.githubusercontent.com/48127972/96625967-7e192d00-132c-11eb-9323-090f7d7cb245.png' width='700px' height='400px'>
 
 # How to run the project?
 
